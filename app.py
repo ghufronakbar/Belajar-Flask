@@ -1,30 +1,11 @@
-# CREATE FLASK APP
-
-## Install virtualenv globally
-### pip install virtualenv
-
-## Create virtualenv
-### virtualenv venv
-
-## Activate virtualenv
-### venv/Scripts/activate
-
-## Install Flask
-### pip install flask
-
-## Run Flask
-### flask run
-
-## Source Code:
-from json import JSONEncoder, JSONDecoder
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 
 
 @app.route('/')
 def hello_world():
-    return 'Hello, World!'
+    return render_template('index.html')
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
