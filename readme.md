@@ -1,41 +1,34 @@
-# CREATE FLASK APP
+# STATIC FLASK APP
 
-## Install virtualenv globally
-``` 
-pip install virtualenv
+## Structure Directory
 ```
+my_flask_app/
+│
+├── venv/                 # Virtual environment
+│
+├── app.py                # File utama aplikasi Flask
+│
+├── static/               # Folder untuk file statis (CSS, JS, gambar, dll)
+│   ├── css/
+│   ├── js/
+│   └── images/
+│
+└── templates/            # Folder untuk file template (HTML)
+    └── index.html
 
-## Create virtualenv
-```
-virtualenv venv
-```
-
-## Activate virtualenv
-```
-venv/Scripts/activate
-```
-
-## Install Flask
-```
-pip install flask
-```
-
-## Run Flask
-```
-flask run
 ```
 
 ## Example Source Code:
 ```
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 
 
 @app.route('/')
 def hello_world():
-    return 'Hello, World!'
+    return render_template('index.html')
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
 ```
