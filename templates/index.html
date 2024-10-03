@@ -1,13 +1,23 @@
-{% extends "layout.html" %} {% block head %}
+{% extends "layout.html" %} 
+
+
+{% block head %}
 <title>Halaman Home</title>
-{% endblock %} {% block body %}
+{% endblock %} 
+
+
+{% block body %}
 <h1>Ini adalah halaman Home</h1>
-<marquee behavior="scroll" direction="right" class="my-4 d-flex flex-row align-items-center g-2">
+<marquee
+  behavior="scroll"
+  direction="right"
+  class="my-4 d-flex flex-row align-items-center g-2"
+>
   <h4 class="mx-auto d-block text-danger text-center">Pake Flask nih bos!</h4>
   <img
     src="{{ url_for('static', filename='images/cat.png') }}"
     alt="logo"
-    style="width: 100px; height: 100px; object-fit: cover;"    
+    style="width: 100px; height: 100px; object-fit: cover"
     class="mx-auto d-block"
   />
   <h6 class="mx-auto d-block text-danger text-center">@lanstheprodigy</h6>
