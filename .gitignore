@@ -1,0 +1,12 @@
+venv
+__pycache__
+.mypy_cache
+*.pyc
+*.pyo
+*.pyd
+*.so
+*.swp
+*.zip
+*.egg-info
+*.egg
+*.egg-link
