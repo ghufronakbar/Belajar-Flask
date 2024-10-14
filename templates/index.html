@@ -2,24 +2,30 @@
 
 
 {% block head %}
-<title>Halaman Home</title>
+<title>Halaman Daftar Pengguna</title>
 {% endblock %} 
 
 
 {% block body %}
-<h1>Ini adalah halaman Home</h1>
-<marquee
-  behavior="scroll"
-  direction="right"
-  class="my-4 d-flex flex-row align-items-center g-2"
->
-  <h4 class="mx-auto d-block text-danger text-center">Pake Flask nih bos!</h4>
-  <img
-    src="{{ url_for('static', filename='images/cat.png') }}"
-    alt="logo"
-    style="width: 100px; height: 100px; object-fit: cover"
-    class="mx-auto d-block"
-  />
-  <h6 class="mx-auto d-block text-danger text-center">@lanstheprodigy</h6>
-</marquee>
+<h1>List Berita</h1>
+<table class="table table-hover table-striped">
+    <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Password</th>
+        <th>Email</th>
+        <th>Action</th>
+    </tr>
+    {% for row in users %}
+    <tr>
+        <th scope="row">{{ row[0] }}</th>
+        <td>{{ row[1] }}</td>
+        <td>{{ row[2] }}</td>
+        <td>{{ row[3] }}</td>
+        <td>
+            <a href="{{url_for('get_user', user_id=row[0])}}" class="btn btn-primary">Detail</a>            
+        </td>
+    </tr>
+    {% endfor %}
+</table>
 {% endblock %}
