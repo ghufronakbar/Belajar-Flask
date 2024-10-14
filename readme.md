@@ -25,7 +25,7 @@ Buka XAMPP, lalu nyalakan **Apache** (untuk server web) dan **MySQL** (untuk dat
 
 ### 2. Buka MySQL Admin dan Buat Database
 
-Setelah MySQL berjalan, buka MySQL Admin (phpMyAdmin), dan buat database baru untuk aplikasi Anda. Misalnya, Anda bisa membuat database dengan nama `flaskapp`.
+Setelah MySQL berjalan, buka MySQL Admin (phpMyAdmin), dan buat database baru untuk aplikasi Anda. Misalnya, Anda bisa membuat database dengan nama `my-flask-app`.
 ![Create Database](./docs/create-db.png)
 
 ### 3. Buat Tabel di Database
@@ -33,9 +33,9 @@ Setelah MySQL berjalan, buka MySQL Admin (phpMyAdmin), dan buat database baru un
 Selanjutnya, buat tabel di database yang sudah dibuat. Struktur tabel ini akan digunakan untuk menyimpan data yang dikirimkan dari aplikasi Flask. Contoh struktur tabel untuk data pengguna mungkin seperti berikut:
 
 - `id` (INT, Primary Key, Auto Increment)
-- `name` (VARCHAR)
+- `username` (VARCHAR)
+- `password` (TEXT)
 - `email` (VARCHAR)
-- `password` (VARCHAR)
 
 Pastikan struktur tabel sesuai dengan kebutuhan aplikasi.
 ![Table Structure](./docs/structure-table.png)
