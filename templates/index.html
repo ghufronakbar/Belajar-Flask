@@ -7,13 +7,15 @@
 
 
 {% block body %}
-<h1>List Berita</h1>
+<h1>List Pengguna</h1>
 <table class="table table-hover table-striped">
     <tr>
         <th>ID</th>
         <th>Username</th>
         <th>Password</th>
         <th>Email</th>
+        <th>Alamat</th>
+        <th>No Telepon</th>
         <th>Action</th>
     </tr>
     {% for row in users %}
@@ -22,6 +24,8 @@
         <td>{{ row[1] }}</td>
         <td>{{ row[2] }}</td>
         <td>{{ row[3] }}</td>
+        <td>{{ row[4] }}</td>
+        <td>{{ row[5] }}</td>
         <td>
             <a href="{{url_for('get_user', user_id=row[0])}}" class="btn btn-primary">Detail</a>            
         </td>

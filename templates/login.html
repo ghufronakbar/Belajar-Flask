@@ -1,0 +1,40 @@
+{% extends 'layout.html' %} {% block head %}
+<title>Login</title>
+{% endblock %} {% block body %}
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header">Login</div>
+        <div class="card-body">
+          <form method="POST">
+            <div class="mb-3">
+              <label for="inpEmail" class="form-label">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                id="inpEmail"
+                name="inpEmail"                
+              />
+            </div>
+            <div class="mb-3">
+              <label for="inpPassword" class="form-label">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="inpPassword"
+                name="inpPassword"                
+              />
+              <span class="text-danger text-sm mt-2">
+                  {{ error }}
+              </span>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
