@@ -109,5 +109,3 @@ python app.py
 
 - **Keamanan**: Session disimpan secara lokal di sisi server dan dienkripsi menggunakan `secret_key`.
 - **MySQL**: Pastikan MySQL berjalan di localhost dengan pengguna dan password yang benar.
-
-Dengan README ini, pengguna dapat menginstal, mengonfigurasi, dan menjalankan aplikasi Flask + MySQL + Session.
