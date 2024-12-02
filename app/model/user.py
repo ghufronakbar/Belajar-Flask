@@ -1,5 +1,6 @@
 from app import db
 from datetime import datetime
+from werkzeug.security import generate_password_hash, check_password_hash
 
 class Users(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -8,6 +9,12 @@ class Users(db.Model):
     password = db.Column(db.String(120), nullable=False)
     created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     updated_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    
+    def setPassword(self, password):
+        self.password = generate_password_hash(password)
+        
+    def checkPassword(self, password):
+        return check_password_hash(self.password, password)
     
     def __repr__(self):
         return '<User {}>'.format(self.name)
