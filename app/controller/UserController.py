@@ -40,10 +40,19 @@ def singleTransform(user):
     }
     
 def store():
-    try:        
-        name = request.json['name']
-        email = request.json['email']
-        password = request.json['password']
+    try:
+        data = request.json
+        
+        name = data.get('name')
+        email = data.get('email')
+        password = data.get('password')
+        
+        if not all([name, email, password]):
+            return response.badRequest([], "All fields are required")
+        
+        check = Users.query.filter_by(email=email).first()
+        if check:
+            return response.badRequest([], "Email already exists")
         
         users = Users(name=name, email=email)
         users.setPassword(password)
